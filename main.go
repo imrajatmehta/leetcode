@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
-	fmt.Println(solution.RomanToInt("MCMXCIV"))
+	words := []int{1, 2, 3, 4, 4, 5}
+	fmt.Println(solution.IsPossible(words))
 
 }
