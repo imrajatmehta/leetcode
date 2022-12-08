@@ -8,7 +8,7 @@ type PairTV struct {
 	Value     string
 }
 
-func Constructor() TimeMap {
+func Constructor2() TimeMap {
 	var obj TimeMap
 	obj.Map = make(map[string][]PairTV)
 	return obj
