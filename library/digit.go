@@ -21,3 +21,10 @@ func MaxInt(a, b int) int {
 	}
 	return a
 }
+
+func AbsInt(a int) int {
+	if a > 0 {
+		return a
+	}
+	return -a
+}
