@@ -12,4 +12,5 @@ func MaxIceCream(costs []int, coins int) int {
 		}
 		count++
 	}
+	return 1
 }

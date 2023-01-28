@@ -20,7 +20,30 @@ func main() {
 	// two.Next = &three
 	// three.Next = &four
 	// four.Next = &five
-
-	fmt.Println(solution.ClimbStairs(1))
+	o := solution.SummaryConstructor()
+	o.AddNum(6)
+	fmt.Println(o.GetIntervals())
+	o.AddNum(6)
+	fmt.Println(o.GetIntervals())
+	o.AddNum(0)
+	fmt.Println(o.GetIntervals())
+	o.AddNum(4)
+	fmt.Println(o.GetIntervals())
+	o.AddNum(8)
+	fmt.Println(o.GetIntervals())
+	o.AddNum(7)
+	fmt.Println(o.GetIntervals())
+	o.AddNum(6)
+	fmt.Println(o.GetIntervals())
+	o.AddNum(4)
+	fmt.Println(o.GetIntervals())
+	o.AddNum(7)
+	fmt.Println(o.GetIntervals())
+	o.AddNum(5)
+	fmt.Println(o.GetIntervals())
+	o.AddNum(9)
+	fmt.Println(o.GetIntervals())
+	o.AddNum(1)
+	fmt.Println(o.GetIntervals())
 
 }

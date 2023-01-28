@@ -1,6 +1,6 @@
 package solution
 
-import "github.com/imrajatmehta/leetcode/library/stack"
+import stack "github.com/imrajatmehta/leetcode/library"
 
 // Stack Based Solution
 // T-O(N)
