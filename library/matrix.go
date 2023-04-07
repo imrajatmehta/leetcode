@@ -16,6 +16,18 @@ func CreateAndFillMatrixInt(n, m, val int) [][]int {
 	}
 	return mat
 }
+
+func CreateAndFillMatrix(n, m int, val interface{}) [][]interface{} {
+	mat := make([][]interface{}, n)
+	for i := 0; i < n; i++ {
+		mat[i] = make([]interface{}, m)
+		for j := 0; j < m; j++ {
+			mat[i][j] = val
+		}
+	}
+	return mat
+}
+
 func RemoveIndex(arr [][]int, i int) [][]int {
 	return append(arr[:i], arr[i+1:]...)
 }
