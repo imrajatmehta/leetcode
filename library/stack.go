@@ -35,7 +35,6 @@ func (this *Stack) Pop() interface{} {
 }
 
 func (this *Stack) Push(value interface{}) {
-
 	this.length++
 	newV := &node{value, this.top}
 	this.top = newV
