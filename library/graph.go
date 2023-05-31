@@ -1,6 +1,6 @@
 package library
 
-func BuildGraphUsingEdges(edges [][]int, n int) [][]int {
+func BuildNonDirGraph(edges [][]int, n int) [][]int {
 	graph := make([][]int, n)
 
 	for i := range edges {
@@ -14,6 +14,20 @@ func BuildGraphUsingEdges(edges [][]int, n int) [][]int {
 			graph[v] = make([]int, 0)
 		}
 		graph[v] = append(graph[v], u)
+	}
+	return graph
+
+}
+func BuildDirGraph(edges [][]int, n int) [][]int {
+	graph := make([][]int, n)
+
+	for i := range edges {
+		u := edges[i][0]
+		v := edges[i][1]
+		if len(graph[u]) == 0 {
+			graph[u] = make([]int, 0)
+		}
+		graph[u] = append(graph[u], v)
 	}
 	return graph
 
