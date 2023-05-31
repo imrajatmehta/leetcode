@@ -5,7 +5,7 @@ import (
 )
 
 func MinimumFuelCost(roads [][]int, seats int) int64 {
-	graph := library.BuildGraphUsingEdges(roads, len(roads)+1)
+	graph := library.BuildNonDirGraph(roads, len(roads)+1)
 	vis := make([]bool, len(graph))
 	var ss int64 = int64(seats)
 	ans, _ := minimumFuelCostHelper(graph, 0, len(graph), ss, vis)
