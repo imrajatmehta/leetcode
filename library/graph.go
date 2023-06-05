@@ -32,3 +32,17 @@ func BuildDirGraph(edges [][]int, n int) [][]int {
 	return graph
 
 }
+
+func GetEightXYDirections() [][]int {
+	dir := [][]int{}
+
+	dir = append(dir, []int{0, 1})
+	dir = append(dir, []int{0, -1})
+	dir = append(dir, []int{1, 0})
+	dir = append(dir, []int{-1, 0})
+	dir = append(dir, []int{1, 1})
+	dir = append(dir, []int{-1, -1})
+	dir = append(dir, []int{1, -1})
+	dir = append(dir, []int{-1, 1})
+	return dir
+}
