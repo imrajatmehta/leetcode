@@ -2,7 +2,7 @@ package solution
 
 // Finding slope using  y2-y1/x2-x1 will not work, coz x2-x1 can be 0, and also if one x or y is at 0 then ti will alsways be 0, so that why we are using
 // ^Y1/^X1 == ^Y2/^X2 for 3 points to be straight. and to avoid above case, we will be ^Y1*^X2 == ^Y2*^X1.
-// can debug this [[0,0],[0,5],[5,0]].
+// can debug this [[0,0],[0,5],[5,0]]
 // ^X1=0
 // ^Y1=5
 // ^X2=5
