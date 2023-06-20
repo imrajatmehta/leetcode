@@ -46,3 +46,11 @@ func GetEightXYDirections() [][]int {
 	dir = append(dir, []int{-1, 1})
 	return dir
 }
+func GetFourXYDirections() [][]int {
+	dir := [][]int{}
+	dir = append(dir, []int{0, 1})
+	dir = append(dir, []int{0, -1})
+	dir = append(dir, []int{1, 0})
+	dir = append(dir, []int{-1, 0})
+	return dir
+}
