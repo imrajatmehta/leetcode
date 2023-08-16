@@ -9,7 +9,7 @@ func IsValidIndexInMatrix(i, j, n, m int) bool {
 func CreateAndFillMatrixInt(n, m, val int) [][]int {
 	mat := make([][]int, n)
 	for i := 0; i < n; i++ {
-		mat[i] = make([]int, n)
+		mat[i] = make([]int, m)
 		for j := 0; j < m; j++ {
 			mat[i][j] = val
 		}
