@@ -2,12 +2,11 @@ package main
 
 import (
 	"fmt"
-	"runtime"
+
+	"github.com/imrajatmehta/leetcode/solution"
 )
 
 func main() {
 
-	// NumCPU returns the number of logical
-	// Cores available for the current process.
-	fmt.Println(runtime.NumCPU())
+	fmt.Println(solution.MyPow(5, 12))
 }
