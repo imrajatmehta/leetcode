@@ -8,5 +8,5 @@ import (
 
 func main() {
 
-	fmt.Println(solution.MyPow(5, 12))
+	fmt.Println(solution.CountSmaller([]int{787, -89, -98, -97, 4, -54}))
 }
