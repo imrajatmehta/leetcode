@@ -1,5 +1,21 @@
 package segmenttree_sum
 
+/*
+This Segment Tree implementation is memory optimised, by only creating a node which is provided in update and contains only parents. not sibling which are not requred i.e range which are not required.
+Update() is called with {1,3,9}  say arr so it will create tree which is shown below,
+Not all the nodes like child (2,2),(4,4),(5,5),(6,6),(7,7),(8,8),(10,10), and there parents, but parent will be there for given arr.
+
+				(1-10)
+				/    \
+			(1-5)    (6-10)
+			/   \    /   \
+		(1,3)             (9,10)
+		/   \             /    \
+	(1,2)   (3,3)       (9,9)
+	/   \
+
+(1,1)
+*/
 type SegmentTreeSum struct {
 	left, right     *SegmentTreeSum
 	sum, start, end int
@@ -9,14 +25,7 @@ func Build(s, e int) *SegmentTreeSum {
 	if s > e {
 		return nil
 	}
-	par := &SegmentTreeSum{start: s, end: e}
-	if s == e {
-		return par
-	}
-	mid := s + (e-s)/2
-	par.left = Build(s, mid)
-	par.right = Build(mid+1, e)
-	return par
+	return &SegmentTreeSum{start: s, end: e}
 }
 
 func (st *SegmentTreeSum) Update(val, place int) {
@@ -29,11 +38,25 @@ func (st *SegmentTreeSum) Update(val, place int) {
 	}
 	mid := st.start + (st.end-st.start)/2
 	if place <= mid {
+		if st.left == nil {
+			st.left = &SegmentTreeSum{start: st.start, end: mid}
+		}
 		st.left.Update(val, place)
 	} else {
+		if st.right == nil {
+			st.right = &SegmentTreeSum{start: mid + 1, end: st.end}
+		}
 		st.right.Update(val, place)
 	}
-	st.sum = st.left.sum + st.right.sum
+	left, right := 0, 0
+	if st.left != nil {
+		left = st.left.sum
+	}
+	if st.right != nil {
+		right = st.right.sum
+	}
+	st.sum = right + left
+
 }
 func (st *SegmentTreeSum) GetSum(s, e int) int {
 	if s > e || st == nil {
